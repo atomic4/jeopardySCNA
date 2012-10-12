@@ -1,0 +1,23 @@
+<div id="board">
+  <%= erb :_board %>
+</div>
+
+<% content_for :javascript do %>
+  <script type="text/javascript" src="javascripts/vendor/jquery-1.7.2.js"></script>
+  <script type="text/javascript" src="javascripts/vendor/underscore.js"></script>
+  <script type="text/javascript" src="javascripts/vendor/backbone.js"></script>
+  <script type="text/javascript" src="javascripts/namespace.js"></script>
+  <script type="text/javascript" src="javascripts/game-board.js"></script>
+<% end %>
+
+<script type="text/javascript">
+  var boardInfo = {
+    category1: 'Numba 1', category2: 'Numba 2',
+    category3: 'Numba 3', category4: 'Numba 4',
+    category5: 'Numba 5', category6: 'Numba 6',
+    value1: 100, value2: 200, value3: 300,
+    value4: 400, value5: 500
+  };
+  var view = new Jeopardy.GameBoard({el: '#board', boardInfo: boardInfo});
+  view.render();
+</script>

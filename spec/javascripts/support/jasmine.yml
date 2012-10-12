@@ -1,0 +1,17 @@
+src_files:
+    - spec/javascripts/support/jasmine-jquery.js
+    - public/javascripts/vendor/jquery-1.7.2.js
+    - public/javascripts/vendor/underscore.js
+    - public/javascripts/vendor/backbone.js
+    - public/javascripts/namespace.js
+    - public/javascripts/**/*.js
+
+stylesheets:
+
+helpers:
+
+spec_files:
+
+src_dir:
+
+spec_dir:
