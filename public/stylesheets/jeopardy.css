@@ -2,10 +2,12 @@ body {
   background-color: #3819FF;
   padding: 0;
   margin: 0;
+  font-family: optima;
+  color: #FFFFFF;
+  text-align: center;
 }
 
 table {
-  font-family: optima;
   width: 100%;
   height: 100%;
   border-collapse: collapse;
@@ -19,7 +21,6 @@ th {
 td {
   font-size: 42px;
   font-weight: bold;
-  color: #FFFFFF;
 }
 
 th, td {
@@ -28,4 +29,8 @@ th, td {
   text-align: center;
   vertical-align: middle;
   border: solid white 1px;
+}
+
+.clue {
+  font-size: 42px;
 }
