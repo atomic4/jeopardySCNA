@@ -3,20 +3,23 @@ namespace("Jeopardy", {
 
     initialize: function() {
       this.setTemplateInterpolator();
+      this.setViewTemplates();
       this.boardInfo = this.options.boardInfo;
       this.finishedQuestions = [];
-      this.boardTemplate = _.template($('#board-template').html());
-      this.clueTemplate = _.template($("#clue-template").html());
+      this.dailyDoubles = this.options.dailyDoubles;
+      this.bindOutOfTime();
     },
 
     events: {
-      'click .clue-value' : 'showClue',
-      'click .clue'       : 'showBoard'
+      'click .clue-value:not(.dailyDouble), .dailyDoubleText' : 'showClue',
+      'click .clue' : 'showBoard',
+      'click .dailyDouble' : 'showDailyDouble'
     },
 
     showBoard: function() {
       $(this.el).html(this.boardTemplate(this.boardInfo));
       this.hideFinishedQuestions();
+      this.setDailyDoubles();
     },
 
     showClue: function(event) {
@@ -28,17 +31,44 @@ namespace("Jeopardy", {
       $(this.el).html(this.clueTemplate({clue: this.boardInfo[categoryNumber][clueNumber]}));
     },
 
+    showDailyDouble: function(event) {
+      $(this.el).html(this.dailyDoubleTemplate($(event.currentTarget).data()));
+      $('#dailyDoubleAudio').get(0).play();
+    },
+
+    bindOutOfTime: function() {
+      $(document).bind('keydown', function(event) {
+        if(event.which == 88) {
+          $('#outOfTime').get(0).play();
+        }
+      });
+    },
+
     setTemplateInterpolator: function() {
       _.templateSettings = {
         interpolate : /\{\{(.+?)\}\}/g
       };
     },
 
+    setViewTemplates: function() {
+      this.boardTemplate = _.template($('#board-template').html());
+      this.clueTemplate = _.template($('#clue-template').html());
+      this.dailyDoubleTemplate = _.template($('#daily-double-template').html());
+    },
+
     hideFinishedQuestions: function() {
-      _.each(this.finishedQuestions, function(question) {
+      this.addClassToClues(this.finishedQuestions, 'hidden');
+    },
+
+    setDailyDoubles: function() {
+      this.addClassToClues(this.dailyDoubles, 'dailyDouble');
+    },
+
+    addClassToClues: function(collection, klass) {
+      _.each(collection, function(question) {
         var selector = '.clue-value[data-category="' + question.category +
           '"][data-clue="' + question.clue + '"]';
-        $(selector).addClass('hidden');
+        $(selector).addClass(klass);
       });
     }
 

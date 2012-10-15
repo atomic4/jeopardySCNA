@@ -43,6 +43,13 @@ th, td {
   vertical-align: middle;
 }
 
+.dailyDoubleText {
+  font-size: 7em;
+  font-weight: bold;
+  display: table-cell;
+  vertical-align: middle;
+}
+
 .hidden {
   display: none;
 }

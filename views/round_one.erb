@@ -1,8 +1,9 @@
 <div id="board"><%= erb :_board %></div>
 <%= erb :_clue %>
+<%= erb :_daily_double %>
 
 <% content_for :javascript do %>
-  <script type="text/javascript" src="javascripts/vendor/jquery-1.7.2.js"></script>
+  <script type="text/javascript" src="javascripts/vendor/jquery-1.8.2.js"></script>
   <script type="text/javascript" src="javascripts/vendor/underscore.js"></script>
   <script type="text/javascript" src="javascripts/vendor/backbone.js"></script>
   <script type="text/javascript" src="javascripts/namespace.js"></script>
@@ -61,6 +62,10 @@
     },
     value1: '$100', value2: '$200', value3: '$300', value4: '$400', value5: '$500'
   };
-  var view = new Jeopardy.GameBoard({el: '#board', boardInfo: boardInfo});
+  var view = new Jeopardy.GameBoard({
+    el: '#board',
+    boardInfo: boardInfo,
+    dailyDoubles: [{category: 'category2', clue: 'clue4'}]
+  });
   view.showBoard();
 </script>
