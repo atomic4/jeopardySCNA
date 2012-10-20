@@ -16,12 +16,13 @@ describe("Jeopardy.GameBoard", function() {
     );
     this.boardInfo = {
       some: "thing",
-      category1: {clue1: "blibbety"},
+      category1: {clue1: "blibbety"}
     };
     this.board =  new Jeopardy.GameBoard({
       boardInfo: this.boardInfo,
       el: "#test-div",
-      dailyDoubles: [{category: 'category1', clue: 'clue2'}]
+      dailyDoubles: [{category: 'category1', clue: 'clue2'}],
+      endGame: function() {}
     });
   });
 
@@ -59,6 +60,17 @@ describe("Jeopardy.GameBoard", function() {
     it("sets the daily doubles", function() {
       this.board.showBoard();
       expect($('[data-category="category1"][data-clue="clue2"]')).toHaveClass("dailyDouble");
+    });
+
+    it("calls the endGame callback when no more clues are left", function() {
+      var endGameSpy = spyOn(this.board, 'endGame');
+      this.board.showBoard();
+      expect(endGameSpy).not.toHaveBeenCalled();
+      spyOn(this.board, 'hideFinishedQuestions');
+      var fakeFinishedQuestions = {length: $('.clue-value').length};
+      this.board.finishedQuestions = fakeFinishedQuestions;
+      this.board.showBoard();
+      expect(endGameSpy).toHaveBeenCalled();
     });
   });
 

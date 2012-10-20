@@ -7,6 +7,7 @@ namespace("Jeopardy", {
       this.boardInfo = this.options.boardInfo;
       this.finishedQuestions = [];
       this.dailyDoubles = this.options.dailyDoubles;
+      this.endGame = this.options.endGame;
       this.bindOutOfTime();
     },
 
@@ -20,6 +21,9 @@ namespace("Jeopardy", {
       $(this.el).html(this.boardTemplate(this.boardInfo));
       this.hideFinishedQuestions();
       this.setDailyDoubles();
+      if(this.finishedQuestions.length === $('.clue-value').length) {
+        this.endGame();
+      }
     },
 
     showClue: function(event) {
