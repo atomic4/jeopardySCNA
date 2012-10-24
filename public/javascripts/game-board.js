@@ -6,7 +6,7 @@ namespace("Jeopardy", {
       this.setViewTemplates();
       this.boardInfo = this.options.boardInfo;
       this.finishedQuestions = [];
-      this.dailyDoubles = this.options.dailyDoubles;
+      this.dailyDoubles = this.boardInfo.dailyDoubles;
       this.endGame = this.options.endGame;
       this.bindOutOfTime();
     },
@@ -38,6 +38,11 @@ namespace("Jeopardy", {
     showDailyDouble: function(event) {
       $(this.el).html(this.dailyDoubleTemplate($(event.currentTarget).data()));
       $('#dailyDoubleAudio').get(0).play();
+    },
+
+    reset: function(newBoardInfo) {
+      this.finishedQuestions = [];
+      this.boardInfo = newBoardInfo;
     },
 
     bindOutOfTime: function() {

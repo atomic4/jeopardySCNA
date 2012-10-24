@@ -16,12 +16,12 @@ describe("Jeopardy.GameBoard", function() {
     );
     this.boardInfo = {
       some: "thing",
-      category1: {clue1: "blibbety"}
+      category1: {clue1: "blibbety"},
+      dailyDoubles: [{category: 'category1', clue: 'clue2'}]
     };
     this.board =  new Jeopardy.GameBoard({
       boardInfo: this.boardInfo,
       el: "#test-div",
-      dailyDoubles: [{category: 'category1', clue: 'clue2'}],
       endGame: function() {}
     });
   });
@@ -89,6 +89,19 @@ describe("Jeopardy.GameBoard", function() {
       this.board.showBoard();
       this.board.showDailyDouble(event);
       expect($('#test-div').text()).toEqual("Daily Double");
+    });
+  });
+
+  describe("#reset", function() {
+    it("resets the finishedQuestions", function() {
+      this.board.finishedQuestions.push("hey there");
+      this.board.reset();
+      expect(this.board.finishedQuestions).toEqual([]);
+    });
+
+    it("resets the boardInfo to the given object", function() {
+      this.board.reset("something totally different");
+      expect(this.board.boardInfo).toEqual("something totally different");
     });
   });
 
