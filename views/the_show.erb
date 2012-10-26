@@ -1,6 +1,7 @@
 <div id="board"><%= erb :_board %></div>
 <%= erb :_clue %>
 <%= erb :_daily_double %>
+<%= erb :_double_jeopardy %>
 
 <% content_for :javascript do %>
   <script type="text/javascript" src="javascripts/vendor/jquery-1.8.2.js"></script>
@@ -14,20 +15,20 @@
   var roundOneInfo = <%= round_one %>;
   var roundTwoInfo = <%= round_two %>;
 
-  var endRoundOne = function() {
-    roundOneView.reset(roundTwoInfo);
-    roundOneView.showBoard();
-  };
-
   var endRoundTwo = function() {
-    // do some final jeopardy stuff or something
   };
 
-  var roundOneView = new Jeopardy.GameBoard({
+  var endRoundOne = function() {
+    gameView.reset(roundTwoInfo);
+    gameView.endGame = endRoundTwo;
+    $(gameView.el).html(gameView.doubleJeopardyTemplate());
+  };
+
+  var gameView = new Jeopardy.GameBoard({
     el: '#board',
     boardInfo: roundOneInfo,
     endGame: endRoundOne
   });
 
-  roundOneView.showBoard();
+  gameView.showBoard();
 </script>

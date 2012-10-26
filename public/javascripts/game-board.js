@@ -6,14 +6,13 @@ namespace("Jeopardy", {
       this.setViewTemplates();
       this.boardInfo = this.options.boardInfo;
       this.finishedQuestions = [];
-      this.dailyDoubles = this.boardInfo.dailyDoubles;
       this.endGame = this.options.endGame;
       this.bindOutOfTime();
     },
 
     events: {
-      'click .clue-value:not(.dailyDouble), .dailyDoubleText' : 'showClue',
-      'click .clue' : 'showBoard',
+      'click .clue-value:not(.dailyDouble), [data-id="dailyDoubleText"]' : 'showClue',
+      'click .clue, [data-id="doubleJeopardy"]' : 'showBoard',
       'click .dailyDouble' : 'showDailyDouble'
     },
 
@@ -32,7 +31,8 @@ namespace("Jeopardy", {
       var clueNumber = target.data('clue');
 
       this.finishedQuestions.push(target.data());
-      $(this.el).html(this.clueTemplate({clue: this.boardInfo[categoryNumber][clueNumber]}));
+      var clue = {clue: this.boardInfo[categoryNumber][clueNumber]};
+      $(this.el).html(this.clueTemplate(clue));
     },
 
     showDailyDouble: function(event) {
@@ -63,6 +63,7 @@ namespace("Jeopardy", {
       this.boardTemplate = _.template($('#board-template').html());
       this.clueTemplate = _.template($('#clue-template').html());
       this.dailyDoubleTemplate = _.template($('#daily-double-template').html());
+      this.doubleJeopardyTemplate = _.template($('#double-jeopardy-template').html());
     },
 
     hideFinishedQuestions: function() {
@@ -70,7 +71,7 @@ namespace("Jeopardy", {
     },
 
     setDailyDoubles: function() {
-      this.addClassToClues(this.dailyDoubles, 'dailyDouble');
+      this.addClassToClues(this.boardInfo.dailyDoubles, 'dailyDouble');
     },
 
     addClassToClues: function(collection, klass) {

@@ -11,8 +11,9 @@ describe("Jeopardy.GameBoard", function() {
         '<script type="text/template" id="clue-template"><div class="clue">{{ clue }}</div></script>' +
         '<script type="text/template" id="daily-double-template">' +
         '<audio id="dailyDoubleAudio"></audio>' +
-        '<div id="dailyDoubleText" data-category="{{ category }}" data-clue="{{ clue }}">' +
-        'Daily Double</div></script>'
+        '<div data-id="dailyDoubleText" data-category="{{ category }}" data-clue="{{ clue }}">' +
+        'Daily Double</div></script>' +
+        '<script type="text/template" id="double-jeopardy-template"></script>'
     );
     this.boardInfo = {
       some: "thing",
@@ -32,11 +33,11 @@ describe("Jeopardy.GameBoard", function() {
 
   describe("events", function() {
     it("calls 'showClue' when .clue-value is clicked", function() {
-      expect(this.board.events['click .clue-value:not(.dailyDouble), .dailyDoubleText']).toEqual('showClue');
+      expect(this.board.events['click .clue-value:not(.dailyDouble), [data-id="dailyDoubleText"]']).toEqual('showClue');
     });
 
     it("calls 'showBoard' when .clue is clicked", function() {
-      expect(this.board.events['click .clue']).toEqual('showBoard');
+      expect(this.board.events['click .clue, [data-id="doubleJeopardy"]']).toEqual('showBoard');
     });
 
     it("calls 'showDailyDouble' when .dailyDouble is clicked", function() {
