@@ -1,7 +1,9 @@
 <div id="board"><%= erb :_board %></div>
+<%= erb :_front_page %>
 <%= erb :_clue %>
 <%= erb :_daily_double %>
 <%= erb :_double_jeopardy %>
+<%= erb :_final_title %>
 
 <% content_for :javascript do %>
   <script type="text/javascript" src="javascripts/vendor/jquery-1.8.2.js"></script>
@@ -14,8 +16,10 @@
 <script type="text/javascript">
   var roundOneInfo = <%= round_one %>;
   var roundTwoInfo = <%= round_two %>;
+  var finalInfo = <%= final %>;
 
   var endRoundTwo = function() {
+    $(gameView.el).html(gameView.finalTitleTemplate(finalInfo));
   };
 
   var endRoundOne = function() {
@@ -30,5 +34,5 @@
     endGame: endRoundOne
   });
 
-  gameView.showBoard();
+  $(gameView.el).html(gameView.frontPageTemplate());
 </script>

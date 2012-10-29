@@ -5,6 +5,7 @@ body {
   font-family: optima;
   color: #FFFFFF;
   text-align: center;
+  cursor: pointer;
 }
 
 table {

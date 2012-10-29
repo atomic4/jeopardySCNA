@@ -7,13 +7,14 @@ namespace("Jeopardy", {
       this.boardInfo = this.options.boardInfo;
       this.finishedQuestions = [];
       this.endGame = this.options.endGame;
-      this.bindOutOfTime();
+      this.bindAudio();
     },
 
     events: {
       'click .clue-value:not(.dailyDouble), [data-id="dailyDoubleText"]' : 'showClue',
-      'click .clue, [data-id="doubleJeopardy"]' : 'showBoard',
-      'click .dailyDouble' : 'showDailyDouble'
+      'click .clue, [data-type="titleScreen"]' : 'showBoard',
+      'click .dailyDouble' : 'showDailyDouble',
+      'click [data-id="finalTitle"]' : 'showFinalClue'
     },
 
     showBoard: function() {
@@ -40,15 +41,22 @@ namespace("Jeopardy", {
       $('#dailyDoubleAudio').get(0).play();
     },
 
+    showFinalClue: function(event) {
+      $(this.el).html(this.clueTemplate($(event.currentTarget).data()));
+    },
+
     reset: function(newBoardInfo) {
       this.finishedQuestions = [];
       this.boardInfo = newBoardInfo;
     },
 
-    bindOutOfTime: function() {
+    bindAudio: function() {
       $(document).bind('keydown', function(event) {
         if(event.which == 88) {
           $('#outOfTime').get(0).play();
+        }
+        else if(event.which == 84) {
+          $('#thinkTheme').get(0).play();
         }
       });
     },
@@ -60,10 +68,12 @@ namespace("Jeopardy", {
     },
 
     setViewTemplates: function() {
+      this.frontPageTemplate = _.template($('#front-page-template').html());
       this.boardTemplate = _.template($('#board-template').html());
       this.clueTemplate = _.template($('#clue-template').html());
       this.dailyDoubleTemplate = _.template($('#daily-double-template').html());
       this.doubleJeopardyTemplate = _.template($('#double-jeopardy-template').html());
+      this.finalTitleTemplate = _.template($('#final-title-template').html());
     },
 
     hideFinishedQuestions: function() {

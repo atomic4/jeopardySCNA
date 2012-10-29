@@ -13,7 +13,10 @@ describe("Jeopardy.GameBoard", function() {
         '<audio id="dailyDoubleAudio"></audio>' +
         '<div data-id="dailyDoubleText" data-category="{{ category }}" data-clue="{{ clue }}">' +
         'Daily Double</div></script>' +
-        '<script type="text/template" id="double-jeopardy-template"></script>'
+        '<script type="text/template" id="double-jeopardy-template"></script>' +
+        '<script type="text/template" id="front-page-template"></script>' +
+        '<script type="text/template" id="final-title-template"></script>' +
+        '<script type="text/template" id="final-clue-template"></script>'
     );
     this.boardInfo = {
       some: "thing",
@@ -37,11 +40,15 @@ describe("Jeopardy.GameBoard", function() {
     });
 
     it("calls 'showBoard' when .clue is clicked", function() {
-      expect(this.board.events['click .clue, [data-id="doubleJeopardy"]']).toEqual('showBoard');
+      expect(this.board.events['click .clue, [data-type="titleScreen"]']).toEqual('showBoard');
     });
 
     it("calls 'showDailyDouble' when .dailyDouble is clicked", function() {
       expect(this.board.events['click .dailyDouble']).toEqual('showDailyDouble');
+    });
+
+    it("calls 'showFinalClue' when [data-id='finalTitle'] is clicked", function() {
+      expect(this.board.events['click [data-id="finalTitle"]']).toEqual('showFinalClue');
     });
   });
 
