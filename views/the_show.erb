@@ -10,29 +10,10 @@
   <script type="text/javascript" src="javascripts/vendor/underscore-min.js"></script>
   <script type="text/javascript" src="javascripts/vendor/backbone.js"></script>
   <script type="text/javascript" src="javascripts/namespace.js"></script>
+  <script type="text/javascript" src="javascripts/round_one.js"></script>
+  <script type="text/javascript" src="javascripts/round_two.js"></script>
+  <script type="text/javascript" src="javascripts/final.js"></script>
   <script type="text/javascript" src="javascripts/game-board.js"></script>
 <% end %>
 
-<script type="text/javascript">
-  var roundOneInfo = <%= round_one %>;
-  var roundTwoInfo = <%= round_two %>;
-  var finalInfo = <%= final %>;
-
-  var endRoundTwo = function() {
-    $(gameView.el).html(gameView.finalTitleTemplate(finalInfo));
-  };
-
-  var endRoundOne = function() {
-    gameView.reset(roundTwoInfo);
-    gameView.endGame = endRoundTwo;
-    $(gameView.el).html(gameView.doubleJeopardyTemplate());
-  };
-
-  var gameView = new Jeopardy.GameBoard({
-    el: '#board',
-    boardInfo: roundOneInfo,
-    endGame: endRoundOne
-  });
-
-  $(gameView.el).html(gameView.frontPageTemplate());
-</script>
+<script type="text/javascript" src="javascripts/game.js"></script>

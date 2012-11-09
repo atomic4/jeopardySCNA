@@ -54,3 +54,7 @@ th, td {
 .hidden {
   display: none;
 }
+
+.code {
+  width: 100%;
+}
