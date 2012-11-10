@@ -1,6 +1,6 @@
 namespace("Config", {
   Final: {
-    category: 'Potent Potables',
-    clue: 'This is the sound a dog makes'
+    category: 'Source Control',
+    clue: 'Of the 4 languages used to write the main implementation of Git (not Github), these are 2'
   }
 });

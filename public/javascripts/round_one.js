@@ -19,7 +19,7 @@ namespace("Config", {
     category3: {
       name: "Designer's Choice",
       clue1: "This field is concerned with the printed word. But for God's sake, don't use Comic Sans",
-      clue2: 'A web page is said to be this if its design changes to match the size of the screen it is viewed on',
+      clue2: 'A web page may be called this if its design changes to match the size of the screen it is viewed on',
       clue3: 'This type of design will give a linear structure to your page',
       clue4: 'Understanding the visual relationships between the size and placement of elements on a page is known as this',
       clue5: 'This "is a prearranged set of harmonious proportions", like the Golden Ratio, which can give a layout a pleasing look'
