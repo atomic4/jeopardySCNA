@@ -44,9 +44,9 @@ namespace("Config", {
       name: 'Fictional Robots and AI',
       clue1: 'Created by Doctor Noonien Soong, this android serves as the second officer on the USS Enterprise-D and USS Enterprise-E',
       clue2: 'A lethal killing machine, this robot uses its liquid metal body to imitate humans',
-      clue3: 'Faced with the possibility of being shut off, this AI decides to kill the astronauts who attempt to do so'
+      clue3: 'Faced with the possibility of being shut off, this AI decides to kill the astronauts who attempt to do so',
       clue4: 'This robot, who is on the run from the military, needs to satisfy his cravings for "input"',
-      clue5: 'This AI promises cake if all puzzles are completed with the assistance of a portal gun',
+      clue5: 'This AI promises cake if all puzzles are completed with the assistance of a portal gun'
     },
     dailyDoubles: [{category: 'category6', clue: 'clue4'}],
     value1: '$100', value2: '$200', value3: '$300', value4: '$400', value5: '$500'

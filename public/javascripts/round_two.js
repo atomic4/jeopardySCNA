@@ -37,8 +37,8 @@ namespace("Config", {
       clue1: 'When the level counter in Pac-Man reaches this number, the game will reach a kill screen, caused by the level counter being stored on a single byte',
       clue2: 'In 1997, while doing maneuvers off the coast of Virginia, the crew of the USS Yorktown (a Navy Smart Ship) entered a value in their database which caused this error (which would normally result in infinity), causing all machines on the ships network to go down',
       clue3: "This type of \"competitive\" bug in General Electric Energy's Unix-based XA/21 energy management system caused a widespread blackout in the Northeastern US in 2003",
-      clue4: 'In 1999, the Mars Climate Orbiter was taken below the minimum safe altitude and disintegrated in the atmosphere because of a mixup in these units of force'
-      clue5: 'Because 32-bit Unix systems interpret time as a signed 32-bit integer, which stores the number of seconds since midnight January 1, 1970, there may be a Y2K-like problem when that 32-bit integer runs out of bits in this year',
+      clue4: 'In 1999, the Mars Climate Orbiter was taken below the minimum safe altitude and disintegrated in the atmosphere because of a mixup in these units of force',
+      clue5: 'Because 32-bit Unix systems interpret time as a signed 32-bit integer, which stores the number of seconds since midnight January 1, 1970, there may be a Y2K-like problem when that 32-bit integer runs out of bits in this year'
     },
     category6: {
       name: 'NTA',
