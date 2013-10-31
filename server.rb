@@ -1,5 +1,8 @@
 require 'sinatra'
 require 'sinatra/content_for'
 
-Dir.glob(File.join(File.dirname(__FILE__), 'lib/*.rb')).each {|f| require f }
+get '/' do
+  erb :the_show
+end
+
 set :views, File.dirname(__FILE__) + "/views"

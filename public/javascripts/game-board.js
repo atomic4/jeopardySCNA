@@ -7,7 +7,7 @@ namespace("Jeopardy", {
       this.boardInfo = this.options.boardInfo;
       this.finishedQuestions = [];
       this.endGame = this.options.endGame;
-      this.bindAudio();
+      this.bindKeydown();
     },
 
     events: {
@@ -50,13 +50,17 @@ namespace("Jeopardy", {
       this.boardInfo = newBoardInfo;
     },
 
-    bindAudio: function() {
+    bindKeydown: function() {
+      var self = this;
       $(document).bind('keydown', function(event) {
         if(event.which == 88) {
           $('#outOfTime').get(0).play();
         }
-        else if(event.which == 84) {
+        if(event.which == 84) {
           $('#thinkTheme').get(0).play();
+        }
+        if(event.shiftKey && event.which == 78) {
+          self.endGame();
         }
       });
     },
