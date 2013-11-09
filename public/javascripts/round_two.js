@@ -2,56 +2,48 @@ namespace("Config", {
   RoundTwo: {
     category1: {
       name: "It's All Assembly to Me",
-      clue1: '<img src="images/c.png" class="code" />',
-      clue2: '<img src="images/java.png" class="code" />',
-      clue3: '<img src="images/haskell.png" class="code" />',
-      clue4: '<img src="images/scala.png" class="code" />',
-      clue5: '<img src="images/erlang.png" class="code" />'
+      clue1: "<img src=\"images/shell.png\" class=\"code\" />",
+      clue2: "<img src=\"images/haskell.png\" class=\"code\" />",
+      clue3: "<img src=\"images/smalltalk.png\" class=\"code\" />",
+      clue4: "<img src=\"images/erlang.png\" class=\"code\" />",
+      clue5: "<img src=\"images/fortran.png\" class=\"code\" />"
     },
     category2: {
-      name: 'A Platter of Patterns',
-      clue1: 'In order to avoid errors, this pattern creates a predefined, neutral entity',
-      clue2: 'When dealing with many objects at once, this pattern can be used to put a simpler front on the code',
-      clue3: 'If you want to dynamically add some flair to an object, use this pattern',
-      clue4: "Due to changing requirements, you may need to use this pattern to adjust an object's interface to conform to a different one",
-      clue5: 'With this pattern, the subject will maintain a list of dependents, which will be notified of any changes'
+      name: "Movie Titles, Refactored",
+      clue1: "<div class=\"text-code\">def awesome_movie<br />&nbsp;&nbsp;return \"Batman\"<br />end</div>",
+      clue2: "&lt;div style=\"color:#00FF00;\"&gt;Velvet\&lt;/div&gt;",
+      clue3: "X.png<br />X.html<br />X.css",
+      clue4: "I18n.t(\"where.am.i\")",
+      clue5: "403: Celestial Body"
     },
     category3: {
-      name: 'You Down with HTTP?',
-      clue1: 'Not Found',
-      clue2: 'Not Modified',
-      clue3: 'Service Unavailable',
-      clue4: 'No Content',
-      clue5: "I'm a teapot"
+      name: "Name the Decade",
+      clue1: "Tim Berners-Lee launches Info.cern.ch, the world's first web site and web server",
+      clue2: "IBM develops Structured Query Language",
+      clue3: "The inaugural SCNA is held in Chicago",
+      clue4: "The first commercial instance of Unix is installed at the New York Telephone Co. Systems Development Center",
+s     clue5: "John von Neumann theorizes about self-replicating computer programs, which become known as the first viruses"
     },
     category4: {
-      name: 'Language Inventors',
-      clue1: 'Ruby',
-      clue2: 'CoffeeScript',
-      clue3: 'Perl',
-      clue4: 'Smalltalk',
-      clue5: 'Go'
+      name: "The Binary World of Sports",
+      clue1: "On opening night of the 2013 NFL season, Peyton Manning tied an NFL record by throwing for 111 touchdowns. Nick Foles of the Philadelphia Eagles tied the same record 8 weeks later",
+      clue2: "Joe DiMaggio holds the MLB record for longest streak of games with a hit at 111000",
+      clue3: "The '96 Chicago Bulls won an NBA record 1001000 games",
+      clue4: "On March 2, 1962, Wilt Chamberlain scored 1100100 points as the Philadelphia Warriors beat the New York Knicks, which still stands as a record for most points in a game",
+      clue5: "Wayne Gretzky is the only player in NHL history to total over 11001000 points in a season, a feat he accomplished 4 times"
     },
     category5: {
-      name: 'Famous Bugs',
-      clue1: 'When the level counter in Pac-Man reaches this number, the game will reach a kill screen, caused by the level counter being stored on a single byte',
-      clue2: 'In 1997, while doing maneuvers off the coast of Virginia, the crew of the USS Yorktown (a Navy Smart Ship) entered a value in their database which caused this error (which would normally result in infinity), causing all machines on the ships network to go down',
-      clue3: "This type of \"competitive\" bug in General Electric Energy's Unix-based XA/21 energy management system caused a widespread blackout in the Northeastern US in 2003",
-      clue4: 'In 1999, the Mars Climate Orbiter was taken below the minimum safe altitude and disintegrated in the atmosphere because of a mixup in these units of force',
-      clue5: 'Because 32-bit Unix systems interpret time as a signed 32-bit integer, which stores the number of seconds since midnight January 1, 1970, there may be a Y2K-like problem when that 32-bit integer runs out of bits in this year'
-    },
-    category6: {
-      name: 'NTA',
-      clue1: 'API',
-      clue2: 'SRP',
-      clue3: 'CORS',
-      clue4: 'GNU',
-      clue5: 'ACID'
+      name: "Stupid Answers",
+      clue1: "Much like an industrial factory, this pattern handles the creation of objects",
+      clue2: "GNU is not Unix, but it's a lot like it, which is why its name stands for this",
+      clue3: "This sorting algorithm splits the list into n sublists and repeatedly merges the sublists until there is 1 sorted sublist remaining",
+      clue4: "Named for Demeter, the greek god of the harvest, this law of programming says to talk only to your immediate friends",
+      clue5: "This is the version of Lisp used in Emacs editors"
     },
     dailyDoubles: [
-      {category: 'category1', clue: 'clue5'},
-      {category: 'category5', clue: 'clue3'}
+      {category: "category2", clue: "clue4"},
+      {category: "category4", clue: "clue5"}
     ],
-    value1: '$200', value2: '$400', value3: '$600', value4: '$800', value5: '$1000'
+    value1: "$200", value2: "$400", value3: "$600", value4: "$800", value5: "$1000"
   }
 });

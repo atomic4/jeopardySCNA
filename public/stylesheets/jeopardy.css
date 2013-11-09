@@ -58,3 +58,10 @@ th, td {
 .code {
   width: 100%;
 }
+
+.text-code {
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  display: inline-block;
+}
