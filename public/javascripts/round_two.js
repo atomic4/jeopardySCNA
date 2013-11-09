@@ -11,7 +11,7 @@ namespace("Config", {
     category2: {
       name: "Movie Titles, Refactored",
       clue1: "<div class=\"text-code\">def awesome_movie<br />&nbsp;&nbsp;return \"Batman\"<br />end</div>",
-      clue2: "&lt;div style=\"color:#00FF00;\"&gt;Velvet\&lt;/div&gt;",
+      clue2: "&lt;div style=\"color:#00FF00;\"&gt;Velvet&lt;/div&gt;",
       clue3: "X.png<br />X.html<br />X.css",
       clue4: "I18n.t(\"where.am.i\")",
       clue5: "403: Celestial Body"
@@ -22,7 +22,7 @@ namespace("Config", {
       clue2: "IBM develops Structured Query Language",
       clue3: "The inaugural SCNA is held in Chicago",
       clue4: "The first commercial instance of Unix is installed at the New York Telephone Co. Systems Development Center",
-s     clue5: "John von Neumann theorizes about self-replicating computer programs, which become known as the first viruses"
+      clue5: "John von Neumann theorizes about self-replicating computer programs, which become known as the first viruses"
     },
     category4: {
       name: "The Binary World of Sports",
