@@ -1,6 +1,5 @@
 namespace("Jeopardy", {
   GameBoard: Backbone.View.extend({
-
     initialize: function() {
       this.setTemplateInterpolator();
       this.setViewTemplates();
@@ -53,13 +52,15 @@ namespace("Jeopardy", {
     bindKeydown: function() {
       var self = this;
       $(document).bind('keydown', function(event) {
-        if(event.which == 88) {
+        var pressedKey = String.fromCharCode(event.which);
+
+        if(pressedKey == 'X') {
           $('#outOfTime').get(0).play();
         }
-        if(event.which == 84) {
+        if(pressedKey == 'T') {
           $('#thinkTheme').get(0).play();
         }
-        if(event.shiftKey && event.which == 78) {
+        if(event.shiftKey && pressedKey == 'N') {
           self.endGame();
         }
       });

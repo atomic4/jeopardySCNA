@@ -1,20 +1,16 @@
-var roundOneInfo = Config.RoundOne;
-var roundTwoInfo = Config.RoundTwo;
-var finalInfo = Config.Final;
-
 var endRoundOne = function() {
-  gameView.reset(roundTwoInfo);
+  gameView.reset(Config.RoundTwo);
   gameView.endGame = endRoundTwo;
   $(gameView.el).html(gameView.doubleJeopardyTemplate());
 };
 
 var endRoundTwo = function() {
-  $(gameView.el).html(gameView.finalTitleTemplate(finalInfo));
+  $(gameView.el).html(gameView.finalTitleTemplate(Config.Final));
 };
 
 var gameView = new Jeopardy.GameBoard({
   el: '#board',
-  boardInfo: roundOneInfo,
+  boardInfo: Config.RoundOne,
   endGame: endRoundOne
 });
 

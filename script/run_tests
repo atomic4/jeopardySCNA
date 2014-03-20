@@ -1,0 +1,4 @@
+# This barely even qualifies as a script,
+# but at least I don't have to know where the tests run from
+
+open spec/javascripts/spec-runner.html

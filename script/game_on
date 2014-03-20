@@ -1,0 +1,4 @@
+# Just like script/run_tests, this barely even qualifies as a script,
+# but at least I don't have to know where the game runs from
+
+open public/game.html

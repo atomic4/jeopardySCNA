@@ -1,0 +1,95 @@
+<html>
+  <head>
+    <title>private static double jeopardy;</title>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/jeopardy.css" />
+
+    <script type="text/javascript" src="javascripts/vendor/jquery-1.8.2.js"></script>
+    <script type="text/javascript" src="javascripts/vendor/underscore-min.js"></script>
+    <script type="text/javascript" src="javascripts/vendor/backbone.js"></script>
+    <script type="text/javascript" src="javascripts/namespace.js"></script>
+    <script type="text/javascript" src="javascripts/round_one.js"></script>
+    <script type="text/javascript" src="javascripts/round_two.js"></script>
+    <script type="text/javascript" src="javascripts/final.js"></script>
+    <script type="text/javascript" src="javascripts/game-board.js"></script>
+  </head>
+
+  <body>
+    <audio id="outOfTime" src="audio/out_of_time.wav" preload="auto"></audio>
+    <audio id="thinkTheme" src="audio/think_theme.mp3" preload="auto"></audio>
+
+    <div id="board">
+      <script type="text/template" id="board-template">
+        <table>
+          <tr>
+            <th class='category-1'>{{ category1['name'] }}</th>
+            <th class='category-2'>{{ category2['name'] }}</th>
+            <th class='category-3'>{{ category3['name'] }}</th>
+            <th class='category-4'>{{ category4['name'] }}</th>
+            <th class='category-5'>{{ category5['name'] }}</th>
+          </tr>
+          <tr>
+            <td><p class='clue-value' data-category='category1' data-clue='clue1'>{{ value1 }}</p></td>
+            <td><p class='clue-value' data-category='category2' data-clue='clue1'>{{ value1 }}</p></td>
+            <td><p class='clue-value' data-category='category3' data-clue='clue1'>{{ value1 }}</p></td>
+            <td><p class='clue-value' data-category='category4' data-clue='clue1'>{{ value1 }}</p></td>
+            <td><p class='clue-value' data-category='category5' data-clue='clue1'>{{ value1 }}</p></td>
+          </tr>
+          <tr>
+            <td><p class='clue-value' data-category='category1' data-clue='clue2'>{{ value2 }}</p></td>
+            <td><p class='clue-value' data-category='category2' data-clue='clue2'>{{ value2 }}</p></td>
+            <td><p class='clue-value' data-category='category3' data-clue='clue2'>{{ value2 }}</p></td>
+            <td><p class='clue-value' data-category='category4' data-clue='clue2'>{{ value2 }}</p></td>
+            <td><p class='clue-value' data-category='category5' data-clue='clue2'>{{ value2 }}</p></td>
+          </tr>
+          <tr>
+            <td><p class='clue-value' data-category='category1' data-clue='clue3'>{{ value3 }}</p></td>
+            <td><p class='clue-value' data-category='category2' data-clue='clue3'>{{ value3 }}</p></td>
+            <td><p class='clue-value' data-category='category3' data-clue='clue3'>{{ value3 }}</p></td>
+            <td><p class='clue-value' data-category='category4' data-clue='clue3'>{{ value3 }}</p></td>
+            <td><p class='clue-value' data-category='category5' data-clue='clue3'>{{ value3 }}</p></td>
+          </tr>
+          <tr>
+            <td><p class='clue-value' data-category='category1' data-clue='clue4'>{{ value4 }}</p></td>
+            <td><p class='clue-value' data-category='category2' data-clue='clue4'>{{ value4 }}</p></td>
+            <td><p class='clue-value' data-category='category3' data-clue='clue4'>{{ value4 }}</p></td>
+            <td><p class='clue-value' data-category='category4' data-clue='clue4'>{{ value4 }}</p></td>
+            <td><p class='clue-value' data-category='category5' data-clue='clue4'>{{ value4 }}</p></td>
+          </tr>
+          <tr>
+            <td><p class='clue-value' data-category='category1' data-clue='clue5'>{{ value5 }}</p></td>
+            <td><p class='clue-value' data-category='category2' data-clue='clue5'>{{ value5 }}</p></td>
+            <td><p class='clue-value' data-category='category3' data-clue='clue5'>{{ value5 }}</p></td>
+            <td><p class='clue-value' data-category='category4' data-clue='clue5'>{{ value5 }}</p></td>
+            <td><p class='clue-value' data-category='category5' data-clue='clue5'>{{ value5 }}</p></td>
+          </tr>
+        </table>
+      </script>
+    </div>
+
+    <script type="text/template" id="front-page-template">
+      <div class="transition" data-type="titleScreen">private static double jeopardy;</div>
+    </script>
+
+    <script type="text/template" id="clue-template">
+      <div class="clue">{{ clue }}</div>
+    </script>
+
+    <script type="text/template" id="daily-double-template">
+      <audio id="dailyDoubleAudio" src="audio/daily_double.wav" preload="auto"></audio>
+      <div class="transition" data-id="dailyDoubleText" data-category="{{ category }}" data-clue="{{ clue }}">Daily Double</div>
+    </script>
+
+    <script type="text/template" id="double-jeopardy-template">
+      <div class="transition" data-type="titleScreen">Get ready for Double Jeopardy</div>
+    </script>
+
+    <script type="text/template" id="final-title-template">
+      <div class="transition" data-id="finalTitle" data-clue="{{ clue }}">{{ category }}</div>
+    </script>
+
+    <script type="text/javascript" src="javascripts/game.js"></script>
+  </body>
+
+</html>
+
