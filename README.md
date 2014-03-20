@@ -41,3 +41,6 @@ value5: "$500"
 
 ### Running tests
 * Type `./script/run_tests` in your terminal, and the tests will open in your browser
+
+#### Other things to note
+* The public/images folder isn't necessary, it's just where I put images that I used as clues at SCNA 2013
