@@ -30,7 +30,7 @@ namespace("Config", {
       clue2: "UUID",
       clue3: "JSON",
       clue4: "URL",
-      clue5: "SCNA"
+      clue5: "GLSEC"
     },
     category5: {
       name: "Real Time Scalable Integrated Cloud Systems in Media",

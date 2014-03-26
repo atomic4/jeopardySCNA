@@ -20,7 +20,7 @@ namespace("Config", {
       name: "Name the Decade",
       clue1: "Tim Berners-Lee launches Info.cern.ch, the world's first web site and web server",
       clue2: "IBM develops Structured Query Language",
-      clue3: "The inaugural SCNA is held in Chicago",
+      clue3: "The inaugural GLSEC is held",
       clue4: "The first commercial instance of Unix is installed at the New York Telephone Co. Systems Development Center",
       clue5: "John von Neumann theorizes about self-replicating computer programs, which become known as the first viruses"
     },
