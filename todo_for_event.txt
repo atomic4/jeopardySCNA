@@ -1,0 +1,7 @@
+- Pick partner to run game with
+
+- Select contestants (ideas: RichS, college professor, local developer)
+- Figure out introduction and credits for SCNA
+
+- Dry run through game
+- print out answers with hot keys 
